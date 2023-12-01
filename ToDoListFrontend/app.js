@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     fetchTasks();
 });
 
-console.log(newTask);
+
 
 function fetchTasks() {
     fetch("http://localhost:8080/api/tasks")
@@ -25,8 +25,9 @@ function addTask() {
     const newTask = {
         description: taskInput.value,
         dueDate: formatDate(dueDateInput.value)
+    
     };
-
+    console.log(newTask);
     fetch("http://localhost:8080/api/tasks", {
         method: "POST",
         headers: {
@@ -59,3 +60,5 @@ function deleteTask(id) {
     })
         .then(() => fetchTasks());
 }
+
+
