@@ -21,7 +21,7 @@ public class Task {
     private Long id;
 
     private String description;
-    private LocalDate dueDate;
+    private String dueDate;
     private boolean completed;
 }
 

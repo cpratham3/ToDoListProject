@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", function () {
     fetchTasks();
 });
 
+console.log(newTask);
+
 function fetchTasks() {
     fetch("http://localhost:8080/api/tasks")
         .then(response => response.json())
@@ -32,12 +34,18 @@ function addTask() {
         },
         body: JSON.stringify(newTask)
     })
-        .then(response => response.json())
-        .then(() => {
-            taskInput.value = "";
-            dueDateInput.value = "";
-            fetchTasks();
-        });
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(() => {
+        taskInput.value = "";
+        dueDateInput.value = "";
+        fetchTasks();
+    })
+    .catch(error => console.error("Error:", error));
 }
 function formatDate(dateString) {
     const date = new Date(dateString);
