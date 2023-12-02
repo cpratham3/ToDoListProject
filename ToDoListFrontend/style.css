@@ -1,23 +1,22 @@
-/* styles.css */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #222;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
 }
 
 #app {
     max-width: 600px;
-    margin: 20px auto;
-    background-color: #fff;
+    margin: 50px auto;
     padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #333;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 h1 {
     text-align: center;
-    color: #333;
 }
 
 ul {
@@ -25,36 +24,40 @@ ul {
     padding: 0;
 }
 
-li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #eee;
-    padding: 10px 0;
-}
-
-button {
-    background-color: #4caf50;
-    color: #fff;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
 .task-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #555;
     padding: 10px;
 }
 
-.task-item input[type="checkbox"] {
+.task-item label {
+    flex-grow: 1;
     margin-right: 10px;
 }
 
-.task-list {
-    list-style-type: none;
-    padding: 0;
+input[type="text"],
+input[type="date"],
+button {
+    padding: 10px;
+    margin-top: 10px;
 }
+
+button {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
