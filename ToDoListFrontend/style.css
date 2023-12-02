@@ -41,3 +41,20 @@ button {
     border-radius: 5px;
     cursor: pointer;
 }
+
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding: 10px;
+}
+
+.task-item input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.task-list {
+    list-style-type: none;
+    padding: 0;
+}

@@ -20,7 +20,13 @@ public class TaskService {
     public Task saveTask(Task task) {
         return taskRepository.save(task);
     }
+    public Task updateTaskCompleted(Long id, boolean completed) {
+        Task task = taskRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Task not found"));
 
+        task.setCompleted(completed);
+        return taskRepository.save(task);
+    }
     public void deleteTask(Long id) {
         taskRepository.deleteById(id);
     }

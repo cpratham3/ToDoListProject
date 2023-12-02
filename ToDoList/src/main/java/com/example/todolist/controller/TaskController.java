@@ -24,7 +24,10 @@ public class TaskController {
     public Task createTask(@RequestBody Task task) {
         return taskService.saveTask(task);
     }
-
+    @PutMapping("/{id}")
+    public Task updateTaskCompleted(@PathVariable Long id, @RequestBody Task updatedTask) {
+        return taskService.updateTaskCompleted(id, updatedTask.isCompleted());
+    }
     @DeleteMapping("/{id}")
     public void deleteTask(@PathVariable Long id) {
         taskService.deleteTask(id);
